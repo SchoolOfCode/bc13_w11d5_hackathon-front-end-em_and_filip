@@ -16,8 +16,10 @@ function App() {
     async function getChristmasList(){
       const response = await fetch(`${url}/api/christmasList`);
       const data = await response.json(response);
-      const 
-    }
+      setGiftsArray(data.payload)
+    },
+    getChristmasList(), 
+    []
 }
 
   function handleChange(e){
