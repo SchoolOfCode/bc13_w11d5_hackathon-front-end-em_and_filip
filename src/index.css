@@ -1,6 +1,7 @@
 body {
   margin: 0;
   height: 100vh;
+  background: './gift-back.jpg';
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -9,7 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aquamarine;
+
 }
 
 code {
