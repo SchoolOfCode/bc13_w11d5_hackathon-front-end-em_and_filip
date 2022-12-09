@@ -1,14 +1,24 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 import List from '../List/List';
 import './App.css';
 
-function App() {
+const url = "https://christmas-with-em-and-filip.onrender.com"
 
+function App() {
+ 
   const [inputValue, setinputValue] = useState("")
   const [giftsArray, setGiftsArray] = useState([])
   const [doneButtonText, setdoneButtonText] = useState("DONE")
+
+  useEffect(){
+    async function getChristmasList(){
+      const response = await fetch(`${url}/api/christmasList`);
+      const data = await response.json(response);
+      const 
+    }
+}
 
   function handleChange(e){
     setinputValue(e.target.value)
