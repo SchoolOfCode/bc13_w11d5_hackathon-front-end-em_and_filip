@@ -41,11 +41,11 @@ function App() {
     });
     const data = await response.json();
     const newObjItem = (data.payload)
-    setGiftsArray(...giftsArray, newObjItem)
+    setGiftsArray([...giftsArray, newObjItem])
     // console.log('payload:', data.payload)
-    // setId(data.payload.id)
+ 
     // console.log('myID:', data.payload[0].id)
-    console.log("giftsArr:", giftsArray)
+    console.log("data.p:", newObjItem)
   }}
 
 
@@ -87,7 +87,7 @@ async function handleDoneClick(id) {
   }
 
   
-  console.log(giftsArray)
+  // console.log(giftsArray)
 
   return (
     <div className={darkMode ? "DarkMode" : "App"} >
