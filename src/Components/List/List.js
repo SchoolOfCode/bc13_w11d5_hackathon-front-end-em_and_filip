@@ -15,9 +15,9 @@ export default function List(props){
                     <ListItem 
                     giftName={gift.item}
                     buttonId={gift.id}
-                    handleDoneClick={props.handleDoneClick}
-                    buttonName={props.doneButtonText}
-                    handleDoneClick={props.handleTickItem}
+                    completed={gift.completed}
+                    handleDoneClick={() => props.handleDoneClick(gift.id)}
+                    //uttonName={props.doneButtonText}
                 />
                 )
                 

@@ -9,7 +9,7 @@ export default function ListItem(props){
             <div className="list-item-container">
                 <li>{props.giftName}</li>
                 <div className="list-buttons">
-                    <Button id={props.buttonId} buttonName={props.buttonName} handleClick={props.handleDoneClick}/>   
+                    <Button id={props.buttonId} buttonName={props.completed ? "✅" : "DONE"} handleClick={props.handleDoneClick}/>   
                     <Button buttonName="DELETE" />  
                 </div>
                  

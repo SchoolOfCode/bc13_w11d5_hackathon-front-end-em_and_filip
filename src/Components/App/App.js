@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import Input from '../Input/Input';
 import Button from '../Button/Button';
+import {DarkModeContext} from "../DarkModeContext/DarkModeContext";
 import List from '../List/List';
 import './App.css';
 
@@ -13,7 +14,8 @@ function App() {
   // const [doneButtonText, setdoneButtonText] = useState("DONE")
   // const [id, setId] = useState()
 
-  
+  const {DarkMode} = useContext(DarkModeContext);
+  const {Toggle} = useContext(DarkModeContext);
 
   useEffect(()=>{
     async function getChristmasList(){
@@ -28,7 +30,9 @@ function App() {
     
 },[])
 
-async function handleTickItem(id) {
+
+
+async function handleDoneClick(id) {
     
   setGiftsArray((previous) => {
     return previous.map((item) => {
@@ -37,19 +41,16 @@ async function handleTickItem(id) {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ item: item.item, completed: !item.completed }),
-    
         })
       }
       
       return item.id !== id
         ? item
         : { ...item, completed: !item.completed };
-    });
-    
-    
+    }); 
 
   })
-;console.log(!list[0].completed)
+;
 }
 
   // function handleDoneClick(id){
@@ -69,17 +70,16 @@ async function handleTickItem(id) {
   
   console.log(giftsArray)
 
-
-
   return (
-    <div className="App">
+    <div className={DarkMode ? "DarkMode" : "App"} >
       
       <div className="addGift-container">
         <Input handleChange={handleChange}/>
         <Button buttonName="Add A Gift" handleClick={handleAddClick}/>
+        <Button buttonName="Dark Mode" handleClick={Toggle}/>
       </div>  
 
-      <List giftsArray={giftsArray} handleDoneClick={handleDoneClick} doneButtonText={doneButtonText} />  
+      <List giftsArray={giftsArray} handleDoneClick={handleDoneClick} />  
     </div>
   );
 }
