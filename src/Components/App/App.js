@@ -53,10 +53,11 @@ async function handleDoneClick(id) {
   setGiftsArray((previous) => {
     return previous.map((item) => {
       if(item.id === id){
-        const response = fetch(`${url}/api/christmasList/${id}`, {
+        fetch(`${url}/api/christmasList/${id}`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ item: item.item, completed: !item.completed }),
+          
         })
       }
       
