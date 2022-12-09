@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+  min-height: 60vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(107, 190, 44, 0.375);
+  padding: 50px;
+  gap: 30px
+}
+
+.DarkMode {
+  text-align: center;
+  min-height: 60vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(237, 100, 173, 0.375);
+  padding: 50px;
+  gap: 30px
+}
+
+.addGift-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
