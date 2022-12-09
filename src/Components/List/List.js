@@ -9,7 +9,7 @@ export default function List(props){
                     {props.giftsArray.map((gift)=>{
                 return (
                     <ListItem 
-                    giftName={gift}
+                    giftName={gift.item}
                     buttonName={props.doneButtonText}
                     handleDoneClick={props.handleDoneClick}
                 />

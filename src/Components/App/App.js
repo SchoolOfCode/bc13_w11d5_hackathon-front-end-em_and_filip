@@ -17,6 +17,7 @@ function App() {
       const response = await fetch(`${url}/api/christmasList`);
       const data = await response.json(response);
       setGiftsArray(data.payload)
+      console.log('payload:', data.payload)
     }
     getChristmasList()
     
