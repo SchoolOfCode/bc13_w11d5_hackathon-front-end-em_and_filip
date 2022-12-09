@@ -12,15 +12,15 @@ function App() {
   const [giftsArray, setGiftsArray] = useState([])
   const [doneButtonText, setdoneButtonText] = useState("DONE")
 
-  useEffect(){
+  useEffect(()=>{
     async function getChristmasList(){
       const response = await fetch(`${url}/api/christmasList`);
       const data = await response.json(response);
       setGiftsArray(data.payload)
-    },
-    getChristmasList(), 
-    []
-}
+    }
+    getChristmasList()
+    
+},[])
 
   function handleChange(e){
     setinputValue(e.target.value)
