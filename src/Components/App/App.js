@@ -14,8 +14,8 @@ function App() {
   // const [doneButtonText, setdoneButtonText] = useState("DONE")
   // const [id, setId] = useState()
 
-  const {DarkMode} = useContext(DarkModeContext);
-  const {Toggle} = useContext(DarkModeContext);
+  const {darkMode} = useContext(DarkModeContext);
+  const {toggle} = useContext(DarkModeContext);
 
   useEffect(()=>{
     async function getChristmasList(){
@@ -71,12 +71,12 @@ async function handleDoneClick(id) {
   console.log(giftsArray)
 
   return (
-    <div className={DarkMode ? "DarkMode" : "App"} >
+    <div className={darkMode ? "DarkMode" : "App"} >
       
       <div className="addGift-container">
         <Input handleChange={handleChange}/>
         <Button buttonName="Add A Gift" handleClick={handleAddClick}/>
-        <Button buttonName="Dark Mode" handleClick={Toggle}/>
+        <Button buttonName="Dark Mode" handleClick={toggle}/>
       </div>  
 
       <List giftsArray={giftsArray} handleDoneClick={handleDoneClick} />  
