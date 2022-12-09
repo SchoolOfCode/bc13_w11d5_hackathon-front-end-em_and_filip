@@ -30,6 +30,22 @@ function App() {
     
 },[])
 
+async function postChristmasList(newItem){
+  const newObj = {item: newItem, completed: false}
+  const response = await fetch(`${url}/api/christmasList`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(newObj)
+  });
+  const data = await response.json();
+  const newObjItem = (data.payload)
+  setGiftsArray(...giftsArray, newObjItem)
+  // console.log('payload:', data.payload)
+  // setId(data.payload.id)
+  // console.log('myID:', data.payload[0].id)
+  console.log("giftsArr:", giftsArray)
+}
+
 
 
 async function handleDoneClick(id) {
@@ -53,9 +69,7 @@ async function handleDoneClick(id) {
 ;
 }
 
-  // function handleDoneClick(id){
-  //   // setdoneButtonText("✅")
-  // }
+ 
 
   function handleChange(e){
     setinputValue(e.target.value)
@@ -63,7 +77,7 @@ async function handleDoneClick(id) {
   }
 
   function handleAddClick(){
-    setGiftsArray([...giftsArray,inputValue])
+    postChristmasList(inputValue)
     
   }
 
